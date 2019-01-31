@@ -6,7 +6,7 @@ import android.os.AsyncTask;
 
 import java.util.List;
 
-public class WordRepostory {
+public class WordRepository {
     //A Repository is a class that abstracts access to multiple data sources.
     // The Repository is not part of the Architecture Components libraries,
     // but is a suggested best practice for code separation and architecture.
@@ -17,7 +17,7 @@ public class WordRepostory {
       private LiveData<List<Word>> mAllWords;
 
       //Add a constructor that gets a handle to the database and initializes the member variables.
-      WordRepostory(Application application){
+      WordRepository(Application application){
           WordRoomDatabase db = WordRoomDatabase.getDatabase(application);
           mWordDao  = db.wordDao();
           mAllWords  = mWordDao.getAllWords();
